@@ -3,7 +3,7 @@
 #define _numLED 300  // Number of LEDs in your underlights device
 #define pinLED  6    // DIN Pin
 #define pStart  36   // First note in array
-#define bLED    255   // Maximum Overall Brightness of LEDs (0-255)
+#define bLED    100   // Maximum Overall Brightness of LEDs (0-255)
 #define rDelay  100   // Refresh Delay (lower = more FPS) if set too low will lag on high LED Counts
 
 const byte _r[128] = {0, 65, 130, 255, 255, 255, 130, 65, 255, 255, 130, 65, 255, 255, 130, 65, 134, 81, 40, 20, 73, 0, 0, 0, 73, 0, 0, 0, 73, 0, 0, 0, 73, 0, 0, 0, 73, 0, 0, 0, 73, 0, 0, 0, 45, 0, 0, 0, 105, 45, 24, 12, 255, 255, 130, 65, 255, 255, 130, 65, 255, 150, 117, 32, 0, 0, 0, 0, 0, 16, 125, 28, 255, 186, 174, 97, 12, 0, 0, 0, 24, 89, 174, 40, 255, 134, 113, 0, 57, 85, 53, 89, 49, 105, 210, 255, 255, 182, 142, 130, 57, 0, 12, 20, 20, 101, 130, 219, 215, 255, 158, 101, 20, 219, 125, 154, 142, 61, 113, 223, 158, 53, 24, 4, 182, 61, 178, 73};
@@ -15,12 +15,12 @@ Adafruit_NeoPixel _LED = Adafruit_NeoPixel(_numLED, pinLED, NEO_GRB + NEO_KHZ800
 int count = 0;
 
 void noteOn(byte ch, byte p, byte v) {
-  _LED.setPixelColor((p + ((ch - 1) << 6)) - pStart, _r[v], _g[v], _b[v]);
+  _LED.setPixelColor((p + (60 * (ch-1))) - pStart, _r[v], _g[v], _b[v]);
   count = 0;
 }
 
 void noteOff(byte ch, byte p, byte v) {
-  _LED.setPixelColor((p + ((ch - 1) << 6)) - pStart, 0, 0, 0);
+  _LED.setPixelColor((p + (60 * (ch-1))) - pStart, 0, 0, 0);
   count = 0;
 }
 
