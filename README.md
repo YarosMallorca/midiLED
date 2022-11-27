@@ -6,7 +6,7 @@
 **Requirements:**
 
 > Software:
-- <a href="https://www.arduino.cc/en/software/OldSoftwareReleases">Arduino IDE 1.8.5</a>
+- <a href="https://www.arduino.cc/en/software/OldSoftwareReleases">Arduino IDE (Any version compatible with Teensyduino. Ex. 1.8.5)</a>
 - <a href="https://www.pjrc.com/teensy/teensyduino.html">Teensyduino</a>
 
 > Hardware:
