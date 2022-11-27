@@ -38,3 +38,14 @@ Open Arduino IDE and follow these steps:
 **7. Build and upload by clicking the button (shown below)**
 
 <img src="https://user-images.githubusercontent.com/54041533/191257247-cb66845f-eda8-490f-95a4-eb590428049d.png" width=400/>
+
+## Common issues
+
+#### LEDs are getting stuck/don't turn off
+Play with the rDelay variable in the code, slightly decrease it (by 20 or 30) or increase it. Might fix the issue. Larger, more powerful teensy might potentially solve the issue as well
+
+#### No output
+Make sure the PIN in the code is set to the actual PIN that your leds are connected.
+Also, the LED strip MUST be WS2812B, other LED strips will NOT work.
+Make sure you're actually sending some MIDI to the Teensy
+Double-check the polarity of the LED strip, and that you've connected the signal wire to DIN/DI (Digital In) on the LED Strip, not the DO (Digital Output)
