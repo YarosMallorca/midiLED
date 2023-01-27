@@ -1,6 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 
-#define _numLED 300  // Number of LEDs in your underlights device
+#define _numLED 128  // Number of LEDs in your underlights device
 #define pinLED  4    // DIN Pin
 #define pStart  36   // First note in array (36 is default, maps to C1 in Ableton)
 #define bLED    100   // Maximum Overall Brightness of LEDs (0-255) [Set to 255 if you have a power supply]
