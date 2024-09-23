@@ -26,10 +26,15 @@ Hardware:
 ## Downloading and Compiling
 
 1. Download and install the Arduino IDE from the link above
-2. Download and open [midiLED.ino](https://github.com/YarostheLaunchpadder/midiLED/archive/refs/heads/main.zip) file in the Arduino IDE
+2. Download and open [midiLED.ino](https://github.com/YarosMallorca/midiLED/archive/refs/heads/main.zip) file in the Arduino IDE
 3. Go to File -> Preferences and add `https://www.pjrc.com/teensy/td_libs_ArduinoIDE/package_Teensyduino_index.json` to the Additional Boards Manager URLs
+<img src="https://github.com/user-attachments/assets/a77cf372-a199-4c82-bb5c-b5718d35316b" height="200px"/>
+<img src="https://github.com/user-attachments/assets/7e1d89a2-0a33-4e68-9ed6-2a510a0f8601" height="200px"/>
+
 4. Go to the Board Manager (left sidebar), search for `Teensy` and install the latest version
-5. Select your Teensy board in the Tools -> Board
+<img src="https://github.com/user-attachments/assets/6b391030-fb8f-4e99-99bd-a15626225066" height="200px"/>
+
+5. Select your Teensy board in the Tools -> Board, select the COM port that it is connected to in Tools -> Port
 6. Select the USB Type to MIDI in Tools -> USB Type
 7. Set the Optimize option in Tools -> Optimize to Fastest
 8. Set the number of LEDs you're using in line 3, and set the PIN your LED strip is connected to in line 4. Adjust other options if necessary.
