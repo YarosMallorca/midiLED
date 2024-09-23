@@ -1,50 +1,47 @@
 # midiLED
-**Control WS2812B LED Strips with Teensy from Ableton Live!**
+
+Control WS2812B LED Strips with Teensy from your favourite MIDI Software
+
+## Showcase
+
+<a src="https://youtu.be/8itP0UnSWBk"><img src="https://img.youtube.com/vi/8itP0UnSWBk/0.jpg" height="200px" />
+<a src="https://youtu.be/HWQFZ31jTJc"><img src="https://img.youtube.com/vi/HWQFZ31jTJc/0.jpg" height="200px" />
+<a src="https://youtu.be/BP8y9pDiv3k"><img src="https://img.youtube.com/vi/BP8y9pDiv3k/0.jpg" height="200px" />
 
 ## Installation
 
 **Requirements:**
 
-> Software:
-- <a href="https://www.arduino.cc/en/software/OldSoftwareReleases">Arduino IDE (Any version compatible with Teensyduino. Ex. 1.8.5)</a>
-- <a href="https://www.pjrc.com/teensy/teensyduino.html">Teensyduino</a>
+Software:
 
-> Hardware:
-- Any teensy with MIDI support (for example Teensy LC)
+- [Arduino IDE (Version 2 or newer)](https://www.arduino.cc/en/software)
+- [Teensyduino](https://www.pjrc.com/teensy/td_download.html)
+
+Hardware:
+
+- Teensy with MIDI support (Teensy 2.0, Teensy++ 2.0, Teensy LC and Teensy 3.0 to 4.1)
 - WS2812B 5V LED Strip
-- Power supply (if long enough LED Strip is used) More details <a href="https://www.temposlighting.com/guides/power-any-ws2812b-setup">Here</a>
+- Power supply (if long enough LED Strip is used) [More details here](https://www.temposlighting.com/guides/power-any-ws2812b-setup)
 
+## Downloading and Compiling
 
-## Compiling & Flashing
-
-Before proceeding Install all required software (listed above)
-
-Open Arduino IDE and follow these steps:
-
-**1. <a href="https://github.com/YarostheLaunchpadder/midiLED/archive/refs/heads/main.zip">Download</a> & Open the midiLED.ino**
-
-**2. Set board type to your teensy target (as shown below)**
-
-<img src="https://user-images.githubusercontent.com/54041533/191255504-60e129c8-de62-48aa-badc-d278e134e9a0.png" width=500/>
-
-**3. Set USB Type to MIDI in ```Tools --> USB Type: --> MIDI```**
-
-**4. Set Optimize option in ```Tools --> Optimize``` to ```Fastest```**
-
-**5. In code, set the number of LEDs you're using in line 3, and set the PIN your LED strip is connected to in line 4.<br>Adjust other options if necessary (not recommended)**
-
-**6. Set the port the Teensy is connected in ```Tools --> Port```. Tip: Port COM1 is normally not valid. The correct port will be marked with your microcontroller name**
-
-**7. Build and upload by clicking the button (shown below)**
-
-<img src="https://user-images.githubusercontent.com/54041533/191257247-cb66845f-eda8-490f-95a4-eb590428049d.png" width=400/>
+1. Download and install the Arduino IDE from the link above
+2. Download and open [midiLED.ino](https://github.com/YarostheLaunchpadder/midiLED/archive/refs/heads/main.zip) file in the Arduino IDE
+3. Go to File -> Preferences and add `https://www.pjrc.com/teensy/td_libs_ArduinoIDE/package_Teensyduino_index.json` to the Additional Boards Manager URLs
+4. Go to the Board Manager (left sidebar), search for `Teensy` and install the latest version
+5. Select your Teensy board in the Tools -> Board
+6. Select the USB Type to MIDI in Tools -> USB Type
+7. Set the Optimize option in Tools -> Optimize to Fastest
+8. Set the number of LEDs you're using in line 3, and set the PIN your LED strip is connected to in line 4. Adjust other options if necessary.
 
 ## Common issues
 
-#### LEDs are getting stuck/don't turn off
+### LEDs are getting stuck/don't turn off
+
 Play with the rDelay variable in the code, slightly decrease it (by 20 or 30) or increase it. Might fix the issue. Larger, more powerful teensy might potentially solve the issue as well
 
-#### No output
+### No output
+
 Make sure the PIN in the code is set to the actual PIN that your leds are connected.
 Also, the LED strip MUST be WS2812B, other LED strips will NOT work.
 Make sure you're actually sending some MIDI to the Teensy
