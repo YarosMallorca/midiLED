@@ -25,6 +25,11 @@ Hardware:
 
 ## Downloading and Compiling
 
+> Note: There are different versions of midiLED for various purposes, [check them out](https://github.com/YarosMallorca/midiLED/branches) if you feel like you're missing a feature.
+> If you want a feature implemented, please [submit this form](https://github.com/YarosMallorca/midiLED/issues/new?assignees=YarosMallorca&labels=enhancement&template=feature_request.md)
+>
+> If you've spotted a bug, please [report here](https://github.com/YarosMallorca/midiLED/issues/new?assignees=YarosMallorca&labels=bug&template=bug_report.md)
+
 1. Download and install the Arduino IDE from the link above
 2. Download and open [midiLED.ino](https://github.com/YarosMallorca/midiLED/archive/refs/heads/main.zip) file in the Arduino IDE
 3. Go to File -> Preferences and add `https://www.pjrc.com/teensy/td_libs_ArduinoIDE/package_Teensyduino_index.json` to the Additional Boards Manager URLs
