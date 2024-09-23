@@ -4,9 +4,9 @@ Control WS2812B LED Strips with Teensy from your favourite MIDI Software
 
 ## Showcase
 
-<a src="https://youtu.be/8itP0UnSWBk"><img src="https://img.youtube.com/vi/8itP0UnSWBk/0.jpg" height="200px" />
-<a src="https://youtu.be/HWQFZ31jTJc"><img src="https://img.youtube.com/vi/HWQFZ31jTJc/0.jpg" height="200px" />
-<a src="https://youtu.be/BP8y9pDiv3k"><img src="https://img.youtube.com/vi/BP8y9pDiv3k/0.jpg" height="200px" />
+<a href="https://youtu.be/8itP0UnSWBk"><img src="https://img.youtube.com/vi/8itP0UnSWBk/0.jpg" height="200px" /></a>
+<a href="https://youtu.be/HWQFZ31jTJc"><img src="https://img.youtube.com/vi/HWQFZ31jTJc/0.jpg" height="200px" /></a>
+<a href="https://youtu.be/BP8y9pDiv3k"><img src="https://img.youtube.com/vi/BP8y9pDiv3k/0.jpg" height="200px" /></a>
 
 ## Installation
 
