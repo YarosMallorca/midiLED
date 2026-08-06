@@ -82,9 +82,56 @@ void handleSysEx(const byte *data, uint16_t length, bool complete) {
     sysexLength = 0;
   }
 }
+
+uint32_t wheel(byte pos, byte bright) {
+  byte r, g, b;
+
+  if (pos < 85) {
+    r = pos * 3;
+    g = 255 - pos * 3;
+    b = 0;
+  } else if (pos < 170) {
+    pos -= 85;
+    r = 255 - pos * 3;
+    g = 0;
+    b = pos * 3;
+  } else {
+    pos -= 170;
+    r = 0;
+    g = pos * 3;
+    b = 255 - pos * 3;
+  }
+
+  return _LED.Color((uint16_t)r * bright / 255,
+                    (uint16_t)g * bright / 255,
+                    (uint16_t)b * bright / 255);
+}
+
+void bootAnimation() {
+  const int tail = 24;
+
+  for (int head = 0; head < _numLED + tail; head++) {
+    _LED.clear();
+    for (int t = 0; t < tail; t++) {
+      int p = head - t;
+      if (p >= 0 && p < _numLED) {
+        byte bright = 255 - (t * (255 / tail));
+        byte hue = (byte)((uint32_t)p * 255 / _numLED);
+        _LED.setPixelColor(p, wheel(hue, bright));
+      }
+    }
+    _LED.show();
+    delay(18);
+  }
+
+  _LED.clear();
+  _LED.show();
+}
+
 void setup() {
   _LED.begin();
   _LED.setBrightness(bLED);
+  bootAnimation();
   usbMIDI.setHandleNoteOn(noteOn);
   usbMIDI.setHandleNoteOff(noteOff);
   usbMIDI.setHandleSystemExclusive(handleSysEx);
