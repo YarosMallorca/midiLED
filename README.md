@@ -44,6 +44,20 @@ Hardware:
 7. Set the Optimize option in Tools -> Optimize to Fastest
 8. Set the number of LEDs you're using in line 3, and set the PIN your LED strip is connected to in line 4. Adjust other options if necessary.
 
+## Full RGB over SysEx
+
+In addition to the note-based palette (velocity picks one of 128 preset colours),
+this firmware accepts **arbitrary per-LED RGB** over MIDI SysEx.
+
+SysEx protocol (manufacturer ID `0x7D`, reserved for prototype/non-commercial use):
+
+| Message    | Bytes                                   | Meaning                                         |
+| ---------- | --------------------------------------- | ----------------------------------------------- |
+| Set pixels | `F0 7D 00 [idx r g b] [idx r g b] … F7` | `idx` = LED 0-127, `r/g/b` = 0-63 colour channel |
+| Clear all  | `F0 7D 01 F7`                           | Turn every LED off                              |
+
+Colour channels are sent as 6-bit values, the firmware expands them to the NeoPixels' full 8-bit range.
+
 ## Common issues
 
 ### LEDs are getting stuck/don't turn off
